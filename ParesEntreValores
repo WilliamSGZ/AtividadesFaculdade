@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main()
+{
+    int val1, val2;
+    
+    printf("Digite dois valores: ");
+    scanf("%d %d", &val1, &val2); // Guarda os inputs do usuário em val1 e val2
+    
+    if(val1 >= 0 && val2 >= 0) // Verifica se ambos os números são positivos
+    {
+        int numEntreVals = 1; // Variável para verificar se ainda existe algum número entre val1 e val2
+        while(numEntreVals == 1) // Verifica se ainda existe números entre val1 e val2
+        {
+            if(val1 > val2)
+            {
+                val2 += 1;
+                if(val2 >= val1)
+                    numEntreVals = 0; // Encerra o loop caso não haja mais números entre val1 e val2
+                if(val2 % 2 == 0)
+                    printf("%d\n", val2); // Exibe o número atual se ele for par
+            }
+            else if(val1 < val2)
+            {
+                val1 += 1;
+                if(val1 >= val2)
+                    numEntreVals = 0; // Encerra o loop caso não haja mais números entre val1 e val2
+                if(val1 % 2 == 0)
+                    printf("%d\n", val1); // Exibe o número atual se ele for par
+            }
+            else
+            {
+                printf("Não existe números entre os dois, pois são o mesmo!");
+                numEntreVals = 0; // Encerra o loop porque os números são iguais
+            }
+                
+            
+            
+        }
+        
+    } else 
+        printf("Ambos os números devem ser positivos!");
+
+    return 0;
+}
