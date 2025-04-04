@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Digite a quantidade de números que deseja escrever: ");
+    int quant; // Quantidade de números a digitar
+    scanf("%d", &quant);
+    int numDigitados = 0; // Quantidade de números já digitados
+    int numAtual; // Número do input atual
+    
+    while(numDigitados < quant) //Loop para receber input da quantidade de números escolhida
+    {
+        printf("Digite o %dº número: ", numDigitados+1);
+        scanf(" %d", &numAtual); // Recebe o input do teclado e guarda em numAtual
+        
+        if(numAtual < 0) // Verifica se o número é negativo
+            printf("%d é negativo!\n", numAtual);
+        else if(numAtual > 0) // Verifica se o número é positivo
+            printf("%d é positivo!\n", numAtual);
+        else // Caso contrário, numAtual é 0
+            printf("%d!", numAtual);
+        numDigitados++;
+    }
+
+    return 0;
+}
