@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+{
+    char estadoCivil; // Recebe o estado civil de cada pessoa
+    int numRespostas = 20; // Número de pessoas que já responderam
+    int qntdS = 0, qntdC = 0, qntdD = 0, qntdV = 0; // Quantidade de pessoas solteiras, casadas, divorciadas e viúvas, respectivamente
+    
+    for(int i = 0; i <= numRespostas; i++)
+    {
+        printf("Digite seu estado civil:\n[S - solteira; C - casada; D - divorciada; V - viúva]\n");
+        scanf(" %c", &estadoCivil);
+        
+        if(estadoCivil == 'S' || estadoCivil == 's')
+            qntdS++;
+        else if(estadoCivil == 'C' || estadoCivil == 'c')
+            qntdC++;
+        else if(estadoCivil == 'D' || estadoCivil == 'd')
+            qntdD++;
+        else if(estadoCivil == 'V' || estadoCivil == 'v')
+            qntdV++;
+        else
+            printf("Estado civil inválido!\n");
+    }
+    
+    printf("Quantidade de solteiros(as): %d\n", qntdS);
+    printf("Quantidade de casados(as): %d\n", qntdC);
+    printf("Quantidade de divorciados(as): %d\n", qntdD);
+    printf("Quantidade de viúvos(as): %d\n", qntdV);
+    
+    
+    return 0;
+}
