@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    
+    float num = 0; // Número recebido pelo input do usuário
+    int numsDigitados = 0; // Quantidade de números digitados pelo usuário
+    float media; // Média dos números digitados
+    
+    while(num >= 0) 
+    {
+        media += num;
+        numsDigitados++;
+        printf("Digite um número(para encerrar o programa, digite um número negativo): ");
+        scanf("%f", &num);
+        if(num < 0) 
+            numsDigitados--;
+    }
+    
+    media /= numsDigitados; // Divide a soma dos números digitados pela quantidade de inputs
+    printf("A média de todos os números positivos é %.2f", media);
+    
+    
+    return 0;
+}
